@@ -1,7 +1,13 @@
-Simple and small implementation of Immutable Collection build on top of ReadOnlyCollection<T>. 
+﻿namespace Examples
+{
+class Program
+{
+static void Main(string[] args)
+{
+	var program = new Program();
+	program.ImmutablCollectionExample();
+}
 
-## ImmutablCollection Example:
-```cs
 void ImmutablCollectionExample()
 {
 	var source = new char[] { 'A' };
@@ -17,4 +23,7 @@ void ImmutablCollectionExample()
 	Output:
 	immutableCollection[0]: A
 **/
-```
+
+
+}
+}

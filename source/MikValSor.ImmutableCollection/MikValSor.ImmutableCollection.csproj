@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.0;net45;</TargetFrameworks>
+    <RootNamespace>MikValSor.Immutable</RootNamespace>
+    <Authors>Mikkel Valentin Sørensen</Authors>
+    <Description>Simple and small implementation of Immutable Collection build on top of ReadOnlyCollection&lt;T&gt;.</Description>
+    <Copyright>Mikkel Valentin Sørensen</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/mikkelvalentinsorensen/MikValSor.ImmutableCollection/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/mikkelvalentinsorensen/MikValSor.ImmutableCollection</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mikkelvalentinsorensen/MikValSor.ImmutableCollection</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>Immutable Collection MikValSor</PackageTags>
+    <PackageReleaseNotes>1.0.0 - Initial release.</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.0|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard1.0\MikValSor.ImmutableCollection.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.0|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.0\MikValSor.ImmutableCollection.xml</DocumentationFile>
+  </PropertyGroup>
+  
+</Project>
