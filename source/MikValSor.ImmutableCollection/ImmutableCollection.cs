@@ -10,7 +10,7 @@ namespace MikValSor.Immutable
 	/// <typeparam name="T">
 	///		The type of elements in the collection.
 	///	</typeparam>
-	public sealed class ImmutablCollection<T> : ReadOnlyCollection<T>
+	public sealed class ImmutableCollection<T> : ReadOnlyCollection<T>
     {
 
 		/// <summary>
@@ -19,7 +19,7 @@ namespace MikValSor.Immutable
 		/// <param name="list">
 		///     The list to wrap.
 		///</param>
-		public ImmutablCollection(IList<T> list) : base(Enumerable.ToList(list))
+		public ImmutableCollection(IList<T> list) : base(Enumerable.ToList(list))
 		{
 		}
 	}

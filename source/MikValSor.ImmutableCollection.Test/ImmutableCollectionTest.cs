@@ -45,7 +45,7 @@ namespace MikValSor.ImmutableCollection.Test
 		{
 			//Arrange
 			var source = new char[] { 'A' };
-			var immutableCollection = new ImmutablCollection<char>(source);
+			var immutableCollection = new ImmutableCollection<char>(source);
 
 			//Act
 			source[0] = 'B';

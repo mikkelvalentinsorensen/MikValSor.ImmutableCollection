@@ -5,13 +5,13 @@ class Program
 static void Main(string[] args)
 {
 	var program = new Program();
-	program.ImmutablCollectionExample();
+	program.ImmutableCollectionExample();
 }
 
-void ImmutablCollectionExample()
+void ImmutableCollectionExample()
 {
 	var source = new char[] { 'A' };
-	var immutableCollection = new MikValSor.Immutable.ImmutablCollection<char>(source);
+	var immutableCollection = new MikValSor.Immutable.ImmutableCollection<char>(source);
 
 	//Change the source
 	source[0] = 'B';
