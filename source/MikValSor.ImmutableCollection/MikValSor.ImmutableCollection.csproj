@@ -11,11 +11,12 @@
     <RepositoryUrl>https://github.com/mikkelvalentinsorensen/MikValSor.ImmutableCollection</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>Immutable Collection MikValSor</PackageTags>
-    <PackageReleaseNotes>1.0.1 - Fixed typo in class name.
+    <PackageReleaseNotes>1.0.2 - Added EnumerableExtender like: IEnumearble&lt;T&gt;.ToImmutable()
+1.0.1 - Fixed typo in class name.
 1.0.0 - Initial release.</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.0|AnyCPU'">
