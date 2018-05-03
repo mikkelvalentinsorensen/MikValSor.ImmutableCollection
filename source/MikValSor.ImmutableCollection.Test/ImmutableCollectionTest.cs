@@ -1,11 +1,7 @@
 ﻿using MikValSor.Immutable;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MikValSor.ImmutableCollection.Test
 {
@@ -41,7 +37,7 @@ namespace MikValSor.ImmutableCollection.Test
 		}
 
 		[Test]
-		public void ImmutableCollection_SafeTest()
+		public void ImmutableCollection_Safe()
 		{
 			//Arrange
 			var source = new char[] { 'A' };
@@ -52,6 +48,64 @@ namespace MikValSor.ImmutableCollection.Test
 
 			//Assert
 			Assert.AreEqual('A', immutableCollection[0]);
+		}
+
+		[Test]
+		public void ImmutableCollection_Immutable_object_char()
+		{
+			//Arrange
+			var validator = new MikValSor.Immutable.ImmutableValidator();
+			object target = new ImmutableCollection<char>(new char[0]);
+
+			//Act
+			validator.EnsureImmutable(target);
+			var actual = validator.IsImmutable(target);
+
+			//Assert
+			Assert.IsTrue(actual);
+		}
+
+		[Test]
+		public void ImmutableCollection_Immutable_object_charArray()
+		{
+			//Arrange
+			var validator = new MikValSor.Immutable.ImmutableValidator();
+			object target = new ImmutableCollection<char[]>(new char[0][]);
+
+			//Act
+			var actual = validator.IsImmutable(target);
+
+			//Assert
+			Assert.IsFalse(actual);
+		}
+
+		[Test]
+		public void ImmutableCollection_Immutable_Type_char()
+		{
+			//Arrange
+			var validator = new MikValSor.Immutable.ImmutableValidator();
+			System.Type target = typeof(ImmutableCollection<byte>);
+
+			//Act
+			validator.EnsureImmutable(target);
+			var actual = validator.IsImmutable(target);
+
+			//Assert
+			Assert.IsTrue(actual);
+		}
+
+		[Test]
+		public void ImmutableCollection_Immutable_Type_charArray()
+		{
+			//Arrange
+			var validator = new MikValSor.Immutable.ImmutableValidator();
+			System.Type target = typeof(ImmutableCollection<char[]>);
+
+			//Act
+			var actual = validator.IsImmutable(target);
+
+			//Assert
+			Assert.IsFalse(actual);
 		}
 	}
 }
