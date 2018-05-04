@@ -87,7 +87,6 @@ namespace MikValSor.ImmutableCollection.Test
 			System.Type target = typeof(ImmutableCollection<byte>);
 
 			//Act
-			validator.EnsureImmutable(target);
 			var actual = validator.IsImmutable(target);
 
 			//Assert
@@ -106,6 +105,21 @@ namespace MikValSor.ImmutableCollection.Test
 
 			//Assert
 			Assert.IsFalse(actual);
+		}
+
+		[Test]
+		public void ImmutableCollection_Serializable_Type_char()
+		{
+			//Arrange
+			var validator = new MikValSor.Runtime.Serialization.SerializableValidator();
+			System.Type target = typeof(ImmutableCollection<byte>);
+
+			//Act
+			validator.EnsureSerializable(target);
+			var actual = validator.IsSerializable(target);
+
+			//Assert
+			Assert.IsTrue(actual);
 		}
 	}
 }
