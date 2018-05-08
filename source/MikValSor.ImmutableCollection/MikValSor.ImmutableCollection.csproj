@@ -14,6 +14,7 @@
     <PackageReleaseNotes>1.0.5
  - Added ImmutableCollectionBase&lt;T&gt; to ease creation of Immutable collection classes.
  - Added documentation to libary.
+
 1.0.4
  - Changed to use inner array instead of ImmutableCollection.
 
