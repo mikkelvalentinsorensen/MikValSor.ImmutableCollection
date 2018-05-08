@@ -14,15 +14,16 @@ namespace MikValSor.Immutable
 		private ICollection m_collcetion => m_ImmutableCollection;
 		private IEnumerable m_enumerable => m_ImmutableCollection;
 
-		public int Count => m_listT.Count;
+		int ICollection<T>.Count => m_listT.Count;
+		int ICollection.Count => m_listT.Count;
+		int IReadOnlyCollection<T>.Count => m_listT.Count;
 
-		public T this[int index] => m_listT[index];
+		T IReadOnlyList<T>.this[int index] => m_listT[index];
+		bool ICollection<T>.Contains(T value) => m_listT.Contains(value);
+		void ICollection<T>.CopyTo(T[] array, int index) => m_listT.CopyTo(array, index);
 
-		public bool Contains(T value) => m_listT.Contains(value);
-		public void CopyTo(T[] array, int index) => m_listT.CopyTo(array, index);
-
-		public IEnumerator<T> GetEnumerator() => m_listT.GetEnumerator();
-		public int IndexOf(T value) => m_listT.IndexOf(value);
+		IEnumerator<T> IEnumerable<T>.GetEnumerator() => m_listT.GetEnumerator();
+		int IList<T>.IndexOf(T value) => m_listT.IndexOf(value);
 
 		bool ICollection<T>.IsReadOnly => true;
 
