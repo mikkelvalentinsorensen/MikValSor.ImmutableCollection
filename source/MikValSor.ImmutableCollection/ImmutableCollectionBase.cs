@@ -20,6 +20,11 @@ namespace MikValSor.Immutable
 			m_ImmutableCollection = immutableCollection;
 		}
 
+		public ImmutableCollection<T> ToImmutable()
+		{
+			return m_ImmutableCollection;
+		}
+
 		private readonly ImmutableCollection<T> m_ImmutableCollection;
 
 		private IList<T> m_listT => m_ImmutableCollection;

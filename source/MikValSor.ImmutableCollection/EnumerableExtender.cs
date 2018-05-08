@@ -17,11 +17,17 @@ namespace MikValSor.Immutable
 		/// <param name="source">
 		///		Enumerable source to create immutable collection.
 		/// </param>
-		/// <returns></returns>
+		/// <returns>
+		/// 
+		/// </returns>
 		public static ImmutableCollection<TSource> ToImmutable<TSource>(this IEnumerable<TSource> source)
 		{
-			var result = source as ImmutableCollection<TSource>;
-			if (result != null) return result;
+			var i = source as ImmutableCollection<TSource>;
+			if (i != null) return i;
+
+			var ib = source as ImmutableCollectionBase<TSource>;
+			if (ib != null) return ib.ToImmutable();
+
 			var list = source as IList<TSource>;
 			if (list == null)
 			{
