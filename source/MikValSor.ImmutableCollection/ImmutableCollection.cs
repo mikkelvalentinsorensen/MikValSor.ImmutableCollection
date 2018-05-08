@@ -15,7 +15,6 @@ namespace MikValSor.Immutable
 	[Serializable]
 	public sealed class ImmutableCollection<T> : IList<T>, IList, IReadOnlyList<T>, ISerializable
 	{
-		List<T> t;
 		private readonly T[] m_array;
 		private IList<T> m_listT => m_array;
 		private IList m_list => m_array;
