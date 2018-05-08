@@ -27,9 +27,30 @@ namespace MikValSor.Immutable
 		/// <param name="list">
 		///     The list to wrap.
 		///</param>
+		///<exception cref="ArgumentNullException">
+		///		list is null.
+		/// </exception>
 		public ImmutableCollection(IList<T> list) : base()
 		{
+			if (list == null) throw new ArgumentNullException(nameof(list));
+
 			m_array = Enumerable.ToArray(list);
+
+			var validator = new ImmutableValidator();
+			if (!validator.IsImmutable(typeof(T)))
+			{
+				for (var i = 0; i < m_array.Length; i++)
+				{
+					try
+					{
+						validator.EnsureImmutable(m_array[i]);
+					}
+					catch (NotImmutableException e)
+					{
+						throw new ArgumentException($"List element at index {i}, was not immutable.", nameof(list), e);
+					}
+				}
+			}
 		}
 
 		/// <summary>

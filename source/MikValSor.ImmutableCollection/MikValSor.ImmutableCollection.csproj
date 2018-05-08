@@ -52,5 +52,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
     <DocumentationFile>bin\Release\netstandard2.0\MikValSor.ImmutableCollection.xml</DocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MikValSor.ImmutableValidator" Version="1.0.6" />
+  </ItemGroup>
   
 </Project>
