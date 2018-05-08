@@ -15,6 +15,7 @@ namespace MikValSor.Immutable
 	[Serializable]
 	public sealed class ImmutableCollection<T> : IList<T>, IList, IReadOnlyList<T>, ISerializable
 	{
+		List<T> t;
 		private readonly T[] m_array;
 		private IList<T> m_listT => m_array;
 		private IList m_list => m_array;
@@ -32,14 +33,76 @@ namespace MikValSor.Immutable
 			m_array = Enumerable.ToArray(list);
 		}
 
+		/// <summary>
+		///		Gets the number of elements contained in the MikValSor.Immutable.ImmutableCollection`1.
+		/// </summary>
+		/// <returns>
+		///		The number of elements contained in the MikValSor.Immutable.ImmutableCollection`1.
+		/// </returns>
 		public int Count => m_listT.Count;
 
-		public T this[int index] => m_listT[index]; 
+		/// <summary>
+		///		Gets or sets the element at the specified index.
+		/// </summary>
+		/// <param name="index">
+		///		The zero-based index of the element to get or set.
+		/// </param>
+		/// <returns>
+		///		The element at the specified index.
+		/// </returns>
+		/// <exception cref="ArgumentOutOfRangeException">
+		///		index is less than 0. -or- index is equal to or greater than MikValSor.Immutable.ImmutableCollection`1.Count.
+		/// </exception>
+		public T this[int index] => m_listT[index];
 
+		/// <summary>
+		///		Determines whether an element is in the MikValSor.Immutable.ImmutableCollection`1.
+		/// </summary>
+		/// <param name="value">
+		///		The object to locate in the MikValSor.Immutable.ImmutableCollection`1. The value can be null for reference types.
+		/// </param>
+		/// <returns>
+		///		true if item is found in the MikValSor.Immutable.ImmutableCollection`1; otherwise, false.
+		/// </returns>
 		public bool Contains(T value) => m_listT.Contains(value);
+
+		/// <summary>
+		///		Copies the entire MikValSor.Immutable.ImmutableCollection`1 to a compatible one-dimensional array, starting at the specified index of the target array.
+		/// </summary>
+		/// <param name="array">
+		///		The one-dimensional System.Array that is the destination of the elements copied from MikValSor.Immutable.ImmutableCollection`1. The System.Array must have zero-based indexing.
+		/// </param>
+		/// <param name="index">
+		///		The zero-based index in array at which copying begins.
+		/// </param>
+		/// <exception cref="ArgumentNullException">
+		///		array is null.
+		/// </exception>
+		/// <exception cref="ArgumentOutOfRangeException">
+		///		arrayIndex is less than 0.
+		/// </exception>
+		/// <exception cref="ArgumentException">
+		///		The number of elements in the source MikValSor.Immutable.ImmutableCollection`1 is greater than the available space from arrayIndex to the end of the destination array.
+		/// </exception>
 		public void CopyTo(T[] array, int index) => m_listT.CopyTo(array, index);
 
+		/// <summary>
+		///		Returns an enumerator that iterates through the MikValSor.Immutable.ImmutableCollection`1.
+		/// </summary>
+		/// <returns>
+		///		A MikValSor.Immutable.ImmutableCollection`1.Enumerator for the MikValSor.Immutable.ImmutableCollection`1.
+		/// </returns>
 		public IEnumerator<T> GetEnumerator() => m_listT.GetEnumerator();
+
+		/// <summary>
+		///		Searches for the specified object and returns the zero-based index of the first occurrence within the entire MikValSor.Immutable.ImmutableCollection`1.
+		/// </summary>
+		/// <param name="value">
+		///		The object to locate in the MikValSor.Immutable.ImmutableCollection`1. The value can be null for reference types.
+		/// </param>
+		/// <returns>
+		///		The zero-based index of the first occurrence of item within the entire MikValSor.Immutable.ImmutableCollection`1, if found; otherwise, –1.
+		/// </returns>
 		public int IndexOf(T value) =>  m_listT.IndexOf(value);
 
 		bool ICollection<T>.IsReadOnly => true;

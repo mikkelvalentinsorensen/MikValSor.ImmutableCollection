@@ -5,6 +5,10 @@ using System.Collections.Generic;
 
 namespace MikValSor.Immutable
 {
+	/// <summary>
+	///		Base for creating collection based classes
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
     public abstract class ImmutableCollectionBase<T> : IList<T>, IList, IReadOnlyList<T>
 	{
 		private readonly ImmutableCollection<T> m_ImmutableCollection;
