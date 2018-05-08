@@ -28,7 +28,10 @@ namespace MikValSor.Immutable
 		///     The list to wrap.
 		///</param>
 		///<exception cref="ArgumentNullException">
-		///		list is null.
+		///		List is null.
+		/// </exception>
+		///<exception cref="ArgumentException">
+		///		List contains mutable element.
 		/// </exception>
 		public ImmutableCollection(IList<T> list) : base()
 		{
