@@ -9,8 +9,17 @@ namespace MikValSor.Immutable
 	///		Base for creating collection based classes
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-    public abstract class ImmutableCollectionBase<T> : IList<T>, IList, IReadOnlyList<T>
+	public abstract class ImmutableCollectionBase<T> : IList<T>, IList, IReadOnlyList<T>
 	{
+		/// <summary>
+		///		Constructor for initializing base instance with collection data.
+		/// </summary>
+		/// <param name="immutableCollection"></param>
+		public ImmutableCollectionBase(ImmutableCollection<T> immutableCollection)
+		{
+			m_ImmutableCollection = immutableCollection;
+		}
+
 		private readonly ImmutableCollection<T> m_ImmutableCollection;
 
 		private IList<T> m_listT => m_ImmutableCollection;
