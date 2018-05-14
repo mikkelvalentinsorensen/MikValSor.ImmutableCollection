@@ -54,7 +54,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MikValSor.ImmutableValidator" Version="1.0.6" />
+    <PackageReference Include="MikValSor.ImmutableValidator" Version="1.0.7" />
   </ItemGroup>
   
 </Project>
