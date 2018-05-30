@@ -1,5 +1,7 @@
 Simple and small implementation of Immutable Collection.
 
+Nuget package: [https://www.nuget.org/packages/MikValSor.ImmutableCollection](https://www.nuget.org/packages/MikValSor.ImmutableCollection)
+
 ## ImmutableCollection Example:
 ```cs
 void ImmutableCollectionExample()
