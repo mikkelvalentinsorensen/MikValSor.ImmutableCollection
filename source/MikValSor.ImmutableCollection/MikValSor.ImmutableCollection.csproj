@@ -1,5 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45;</TargetFrameworks>
     <RootNamespace>MikValSor.Immutable</RootNamespace>
@@ -11,6 +10,7 @@
     <RepositoryUrl>https://github.com/mikkelvalentinsorensen/MikValSor.ImmutableCollection</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>Immutable Collection MikValSor</PackageTags>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     <PackageReleaseNotes>1.0.5
  - Added ImmutableCollectionBase&lt;T&gt; to ease creation of Immutable collection classes.
  - Added documentation to libary.
@@ -36,25 +36,7 @@
     <FileVersion>1.0.0.0</FileVersion>
     <PackageIconUrl>https://raw.githubusercontent.com/mikkelvalentinsorensen/MikValSor/master/icon/icon.png</PackageIconUrl>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.0|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard1.0\MikValSor.ImmutableCollection.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.0|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.0\MikValSor.ImmutableCollection.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.0\MikValSor.ImmutableCollection.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\MikValSor.ImmutableCollection.xml</DocumentationFile>
-  </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="MikValSor.ImmutableValidator" Version="1.0.7" />
   </ItemGroup>
-  
 </Project>
